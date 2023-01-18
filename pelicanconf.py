@@ -31,7 +31,7 @@ USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
-GITHUB_CORNER_URL = "https://github.com/ashleykleynhans"
+GITHUB_CORNER_URL = "https://github.com/ashleykleynhans/pelican"
 
 SOCIAL = (
     ('github', 'https://github.com/ashleykleynhans'),
