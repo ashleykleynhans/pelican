@@ -10,18 +10,9 @@ SITELOGO = SITEURL + '/images/profile.jpeg'
 FAVICON = SITEURL + '/images/favicon.ico'
 PORT = 8000
 
-# Code highlighting the theme
-PYGMENTS_STYLE = 'solarized-dark'
-
-# Code blocks with line numbers
-PYGMENTS_RST_OPTIONS = {
-    'linenos': 'table'
-}
-
-ROBOTS = 'index, follow'
-
 PATH = 'content'
-OUTPUT_PATH = 'blog/'
+ROBOTS = 'index, follow'
+OUTPUT_PATH = 'output/'
 TIMEZONE = 'Africa/Johannesburg'
 
 DISABLE_URL_HASH = True
@@ -80,7 +71,8 @@ STATIC_PATHS = [
 
 EXTRA_PATH_METADATA = {
     'static/CNAME': {'path': 'CNAME'},
-    'static/robots.txt': {'path': 'robots.txt'}
+    'static/robots.txt': {'path': 'robots.txt'},
+    'images/favicon.ico': {'path': 'favicon.ico'}
 }
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
@@ -94,7 +86,8 @@ PLUGIN_PATHS = [
 
 PLUGINS = [
     'sitemap',
-    'post_stats'
+    'post_stats',
+    'neighbors'
 ]
 
 # Sitemap Settings
@@ -121,4 +114,36 @@ PAGE_SAVE_AS = PAGE_URL + 'index.html'
 # There is no other HTML content
 READERS = {
     'html': None
+}
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+            'pygments_style': 'solarized-dark',
+            'noclasses': True,
+            'guess_lang': True,
+        },
+        'markdown.extensions.extra': {
+            'markdown.extensions.footnotes': {},
+            'markdown.extensions.fenced_code': {},
+        },
+        'markdown.extensions.meta': {},
+        'markdown.extensions.toc': {
+            'title': 'Table of Contents',
+            # 'anchorlink': True,
+            #'permalink': True,
+            'toc_depth': 3,
+        },
+        'pymdownx.emoji': {
+            'options': {
+                'attributes': {
+                    'align': 'absmiddle',
+                    'height': '20px',
+                    'width': '20px'
+                },
+            },
+        },
+    },
+    'output_format': 'html5',
 }
