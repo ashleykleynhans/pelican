@@ -6,6 +6,8 @@ SITENAME = "Ashley Kleynhans"
 SITETITLE = 'Ashley Kleynhans'
 SITESUBTITLE = 'DevOps Engineer'
 BROWSER_COLOR = "#333333"
+SITELOGO = SITEURL + '/images/profile.jpeg'
+FAVICON = SITEURL + '/images/favicon.ico'
 
 # Code highlighting the theme
 PYGMENTS_STYLE = "monokai"
