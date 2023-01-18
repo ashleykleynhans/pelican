@@ -74,8 +74,14 @@ STATIC_PATHS = [
     'static',
     'images/favicon.ico',
     'static/robots.txt',
-    'static/custom.css'
+    'static/custom.css',
+    'static/CNAME'
 ]
+
+EXTRA_PATH_METADATA = {
+    'static/CNAME': {'path': 'CNAME'},
+    'extras/robots.txt': {'path': 'robots.txt'}
+}
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
