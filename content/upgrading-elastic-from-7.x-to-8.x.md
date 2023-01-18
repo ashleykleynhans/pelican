@@ -1,10 +1,11 @@
 Title: Upgrading Elastic Stack From 7.x to 8.x on Ubuntu 22.04
 Date: 2023-01-18
-Authors: Ashley Kleynhans
+Author: Ashley Kleynhans
 Modified: 2023-01-18
 Category: DevOps
 Tags: elastic, ubuntu, devops
 Summary: In this post, I will walk you through the process that I followed to upgrade my Elastic Stack from version 7.x to 8.x on Ubuntu 22.04 LTS.
+Status: Published
 
 ## Update apt repo from version 7.x to version 8.x
 

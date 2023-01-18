@@ -13,6 +13,11 @@ PORT = 8000
 # Code highlighting the theme
 PYGMENTS_STYLE = 'solarized-dark'
 
+# Code blocks with line numbers
+PYGMENTS_RST_OPTIONS = {
+    'linenos': 'table'
+}
+
 ROBOTS = 'index, follow'
 
 PATH = 'content'
@@ -23,7 +28,7 @@ DISABLE_URL_HASH = True
 
 DEFAULT_LANG = 'en'
 THEME = 'themes/flex'
-CUSTOM_CSS = 'extra/custom.css'
+CUSTOM_CSS = 'static/custom.css'
 
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -108,3 +113,8 @@ ARTICLE_SAVE_AS = ARTICLE_URL + 'index.html'
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = PAGE_URL + 'index.html'
+
+# There is no other HTML content
+READERS = {
+    'html': None
+}
