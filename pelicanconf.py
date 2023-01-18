@@ -80,7 +80,7 @@ STATIC_PATHS = [
 
 EXTRA_PATH_METADATA = {
     'static/CNAME': {'path': 'CNAME'},
-    'extras/robots.txt': {'path': 'robots.txt'}
+    'static/robots.txt': {'path': 'robots.txt'}
 }
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
