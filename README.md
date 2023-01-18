@@ -12,6 +12,7 @@ theme.
 
 ```bash
 git clone https://github.com/ashleykleynhans/pelican
+git submodule update --init
 cd pelican
 python3 -m venv venv
 source venv/bin/activate

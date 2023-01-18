@@ -8,6 +8,7 @@ SITESUBTITLE = 'DevOps Engineer'
 BROWSER_COLOR = '#333333'
 SITELOGO = SITEURL + '/images/profile.jpeg'
 FAVICON = SITEURL + '/images/favicon.ico'
+PORT = 8000
 
 # Code highlighting the theme
 PYGMENTS_STYLE = 'solarized-dark'
@@ -61,11 +62,17 @@ CC_LICENSE = {
 
 COPYRIGHT_YEAR = datetime.now().year
 DEFAULT_PAGINATION = 10
+STATIC_CHECK_IF_MODIFIED = True
 
 STATIC_PATHS = [
     'images',
-    'extra'
+    'static'
 ]
+
+EXTRA_PATH_METADATA = {
+    'static/robots.txt': {'path': 'robots.txt'},
+    'images/favicon.ico': {'path': 'favicon.ico'}
+}
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
