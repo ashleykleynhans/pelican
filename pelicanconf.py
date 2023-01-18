@@ -71,13 +71,11 @@ STATIC_CHECK_IF_MODIFIED = True
 
 STATIC_PATHS = [
     'images',
-    'static'
+    'static',
+    'images/favicon.ico',
+    'static/robots.txt',
+    'static/custom.css'
 ]
-
-EXTRA_PATH_METADATA = {
-    'static/robots.txt': {'path': 'robots.txt'},
-    'images/favicon.ico': {'path': 'favicon.ico'}
-}
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
