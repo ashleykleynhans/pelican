@@ -1,7 +1,7 @@
 # Ashley's Blog (https://trapdoor.cloud)
 
 This is the source code for my personal blog, which can be
-found at [trapdoor.cloud][https://trapdoor.cloud].
+found at [trapdoor.cloud](https://trapdoor.cloud).
 
 The blog is powered by [Pelican](http://getpelican.com/),
 which generates static HTML from Markdown files, and
