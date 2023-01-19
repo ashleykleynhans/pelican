@@ -150,3 +150,6 @@ MARKDOWN = {
 
 DISQUS_SITENAME = 'trapdoor-cloud'
 DISQUS_COMMENT_COUNT = True
+
+# Google Analytics 4
+GOOGLE_GLOBAL_SITE_TAG = 'G-DDEVPJLBFC'
