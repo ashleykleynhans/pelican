@@ -87,9 +87,9 @@ SHOW SLAVE STATUS\G
    to the old cluster (no reboot required).
 * Update DNS CNAME to point to the new RDS Cluster endpoint.
 * Reset the new master/writer in the new Aurora cluster:
-    ```bash
-    CALL mysql.rds_reset_external_master;
-    ```
+```bash
+CALL mysql.rds_reset_external_master;
+```
 * Take application out of maintenance mode.
 * Stop the old Aurora Cluster.
 * Test.
