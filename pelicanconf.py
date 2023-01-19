@@ -7,7 +7,7 @@ SITETITLE = 'Ashley Kleynhans'
 SITESUBTITLE = 'DevOps Engineer'
 BROWSER_COLOR = '#333333'
 SITELOGO = SITEURL + '/images/profile.jpeg'
-FAVICON = SITEURL + '/images/favicon.ico'
+FAVICON = SITEURL + '/favicon.ico'
 PORT = 8000
 
 PATH = 'content'
