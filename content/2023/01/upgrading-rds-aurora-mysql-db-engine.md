@@ -1,10 +1,10 @@
-Title: Test Post
+Title: Upgrading RDS Aurora MySQL DB Engine Version with Minimal Downtime
 Date: 2023-01-19
 Author: Ashley Kleynhans
 Modified: 2023-01-19
 Category: DevOps
 Tags: devops, aws, rds, aurora, mysql
-Summary: Upgrade the RDS Aurora MySQL DB engine with minimal downtime.
+Summary: In this post, I will walk you through the process of upgrading an RDS Aurora MySQL DB engine with minimal downtime.
 Status: Published
 
 # Upgrading Aurora MySQL DB Engine in RDS
