@@ -56,17 +56,32 @@ supports the `filter-AAAA` feature, so I decided to compile
 and install dnsmasq from the [source used by Ubuntu 23.04](
 https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/dnsmasq/2.88-1/dnsmasq_2.88.orig.tar.gz).
 
-## Compile and Install dnsmasq from Source
+## Download, Compile and Install dnsmasq from Source
 
-### Compile dnsmasq
+### Download source for dnsmasq version 2.88 from Ubuntu Launchpad site
 
 ```bash
 cd /tmp
 wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/dnsmasq/2.88-1/dnsmasq_2.88.orig.tar.gz
+```
+
+### Extract dnsmasq 2.88 source
+
+```bash
 tar zxvf dnsmasq_2.88.orig.tar.gz
-cd dnsmasq-2.88.orig
+```
+
+### Install dependency packages
+
+```bash
 sudo apt update
 sudo apt install dnsmasq gettext
+```
+
+### Compile dnsmasq
+
+```bash
+cd dnsmasq-2.88.orig
 make all-i18n
 ```
 
