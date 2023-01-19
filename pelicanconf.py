@@ -147,3 +147,6 @@ MARKDOWN = {
     },
     'output_format': 'html5',
 }
+
+DISQUS_SITENAME = 'trapdoor-cloud'
+DISQUS_COMMENT_COUNT = True
