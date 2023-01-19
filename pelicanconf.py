@@ -35,6 +35,7 @@ GITHUB_CORNER_URL = 'https://github.com/ashleykleynhans/pelican'
 
 SOCIAL = (
     ('github', 'https://github.com/ashleykleynhans'),
+    ('stack-overflow', 'https://stackoverflow.com/users/817324/ashley-kleynhans'),
     ('linkedin', 'https://www.linkedin.com/in/ashleykleynhans')
 )
 
