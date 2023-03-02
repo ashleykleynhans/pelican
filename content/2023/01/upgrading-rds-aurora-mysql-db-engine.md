@@ -1,7 +1,7 @@
 Title: Upgrading RDS Aurora MySQL DB Engine Version with Minimal Downtime
 Date: 2023-01-19
 Author: Ashley Kleynhans
-Modified: 2023-01-19
+Modified: 2023-03-02
 Category: DevOps
 Tags: devops, aws, rds, aurora, mysql
 Summary: In this post, I will walk you through the process of upgrading an RDS Aurora MySQL DB engine with minimal downtime.
@@ -11,7 +11,27 @@ This procedure explains how to switch over from an existing
 Aurora MySQL RDS cluster running a specific engine version to a
 new Aurora MySQL RDS cluster running a new engine version
 (eg. Upgrading the engine version of Aurora MySQL from 5.6 to
-Aurora MySQL 5.7).
+Aurora MySQL 5.7).  It has been tested successfully in upgrading
+an Aurora MySQL from 5.6 to Aurora MySQL 5.7 and also upgrading
+an Aurora MySQL from 5.7 to Aurora MySQL 8.
+
+## Considerations before Upgrading from MySQL 5.7 to MySQL 8
+
+If you are using ISO date formats when querying `DATETIME` fields,
+your queries will no longer work in MySQL 8, so you will either need
+to update your queries to use the correct `DATETIME` format, ie
+`YYYY-MM-DD HH:MM:SS`, or to use the `STR_TO_DATE` function, eg:
+
+```mysql
+SELECT STR_TO_DATE( '2019-02-20T10:00:00.000Z', '%Y-%m-%dT%T.%fZ');
+```
+
+Otherwise you will run into errors that look like this:
+
+```mysql
+mysql> SELECT * FROM  example_table WHERE example_field >= '2023-01-02T06:45:31+0000';
+ERROR 1525 (HY000): Incorrect DATETIME value: '2023-01-02T06:45:31+0000'
+```
 
 ## Prepare for Upgrade
 
@@ -21,10 +41,15 @@ production cluster into read only mode.**
 
 * Add a DNS CNAME to point to the RDS load balancer for the current Aurora cluster
    with a TTL of **60 seconds**.
-* Copy the existing parameter groups for the cluster as well as for the instances to
-   new parameter groups in point (2) above and change `binlog_format` from
-   `OFF` to `MIXED` in each.
+* Create a new DB Cluster parameter group with the same settings as the
+  default parameter group.
+* Change `binlog_format` from either `OFF` (this was the default in 5.6)
+  or `ROW` (this was the default in 5.7) to `MIXED` in the new
+  Parameter group.
 * Add a new Reader instance to the cluster and configure it to use the new parameter group. 
+* Apply the changes immediately.
+* Reboot the reader instance for the `binlog_format` change in the parameter group
+  to take effect.
 * Failover the new Reader instance so that it becomes the Master/Writer so that
    the cluster does not need to be rebooted for the parameter group changes to take effect.
 * Confirm that `binlog_format` is enabled on the new Writer instance that you
@@ -95,6 +120,16 @@ CALL mysql.rds_reset_external_master;
 * Test.
 * Start and delete the old Cluster after a few days (it cannot be deleted
    when it is stopped).
+
+## Rolling back
+
+* Start the old Aurora Cluster.
+* Once the old cluster is up, put application into maintenance mode.
+* Update DNS CNAME to point back to the old RDS Cluster endpoint.
+* Edit parameter group and change `read_only` back from `1` to
+  `{TrueIfReplica}` to enable writes the cluster (no reboot required).
+* Take application out of maintenance mode.
+* Test.
 
 ## References
 
