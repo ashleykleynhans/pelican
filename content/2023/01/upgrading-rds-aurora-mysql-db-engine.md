@@ -40,20 +40,21 @@ that you are upgrading so that you don't accidentally put another
 production cluster into read only mode.**
 
 * Add a DNS CNAME to point to the RDS load balancer for the current Aurora cluster
-   with a TTL of **60 seconds**.
+  with a TTL of **60 seconds**.
 * Create a new DB Cluster parameter group with the same settings as the
   default parameter group.
 * Change `binlog_format` from either `OFF` (this was the default in 5.6)
   or `ROW` (this was the default in 5.7) to `MIXED` in the new
   Parameter group.
-* Add a new Reader instance to the cluster and configure it to use the new parameter group. 
+* Add a new Reader instance to the cluster.
+* Modify the new Reader instance to use the new DB Cluster Parameter Group.
 * Apply the changes immediately.
-* Reboot the reader instance for the `binlog_format` change in the parameter group
-  to take effect.
+* Reboot the new Reader instance for the Parameter Group changes to
+  take effect.
 * Failover the new Reader instance so that it becomes the Master/Writer so that
-   the cluster does not need to be rebooted for the parameter group changes to take effect.
+  the cluster does not need to be rebooted for the parameter group changes to take effect.
 * Confirm that `binlog_format` is enabled on the new Writer instance that you
-   failed over to in point (4) above.
+  failed over to in point (4) above.
 ```bash
 SHOW VARIABLES LIKE 'binlog_format';
 ```
