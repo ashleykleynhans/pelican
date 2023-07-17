@@ -1,7 +1,7 @@
 Title: Getting Started with RunPod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2023-07-16
+Modified: 2023-07-17
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
 Summary: This post helps you to get started with [RunPod](vhttps://runpod.io?ref=w18gds2n)
@@ -177,6 +177,10 @@ a Serverless Template for your image.
 
 ### Templates
 
+Navigate to your [RunPod Serverless Templates](
+https://www.runpod.io/console/serverless/user/templates) and click
+the `New Template` button.
+
 A template is  a specification for the [Docker](https://www.docker.com/)
 containers that will run your Serverless application.
 
@@ -188,6 +192,22 @@ but you can also use other Docker container registries.  If you choose to
 use a private Docker registry rather than the public Docker Hub registry,
 you will also need to provide `Container Registry Credentials`.  The
 credentials are not required if you use a Public registry.
+
+![RunPod Template Example]({static}/images/runpod-template.png)
+
+1. Enter a name for your template.
+2. Enter the Docker image name for the Docker image that you want to use
+   for your Serverless Endpoint.
+3. Leave `Container Registry Credentials` empty, unless you specifically
+   require credentials for the Docker container registry that you are using.
+4. Leave `Docker Command` empty, unless you specifically need to provide
+   a Docker command for whatever reason, but this should not usually be
+   required.
+5. Set your Container Disk size.  5GB is usually sufficient and I have
+   not yet found a specific use-case where it needs to be increased.
+6. If your application requires environment variables to be set,
+   click the dropdown arrow next to `Environment Variables` and enter
+   your environment variables as Key => Value pairs.
 
 Once your Serverless Template is created, you are ready to create a
 Serverless Endpoint.
@@ -202,9 +222,15 @@ designed for GPU Cloud within Serverless.
 
 ### Endpoints
 
+Navigate to your [RunPod Serverless Endpoints](
+https://www.runpod.io/console/serverless/user/endpoints) and click
+the `New Endpoint` button.
+
 An endpoint is your actual Serverless Endpoint that will provide a
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
 API endpoint for serving your application.
+
+![RunPod Endpoint Example]({static}/images/runpod-endpoint-basic.png)
 
 When adding a new Endpoint, you will need to configure a few things:
 
@@ -220,6 +246,8 @@ You can also optionally configure:
 * FlashBoot
 
 And additional Advanced options:
+
+![RunPod Advanced Endpoint Example]({static}/images/runpod-endpoint-advanced.png)
 
 * Deployment Region
 * Scale Type
@@ -336,7 +364,8 @@ queue.
 ## Resources
 
 * [YouTube Tutorials by Generative Labs](https://www.youtube.com/@generativelabs/videos)
-* [RunPod's Own Endpoints](https://github.com/runpod-workers)
-* [My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper)
-* [My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan)
-* [My Oobabooga Text Generation Endpoint](https://github.com/ashleykleynhans/runpod-worker-oobabooga)
+* [RunPod's Blog Post on Creating a Custom Basic API Endpoint](https://blog.runpod.io/serverless-create-a-basic-api/)
+* [Source Code to RunPod's Own Endpoints](https://github.com/runpod-workers)
+* [Source Code to My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper)
+* [Source Code to My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan)
+* [Source Code to My Oobabooga Text Generation Endpoint](https://github.com/ashleykleynhans/runpod-worker-oobabooga)
