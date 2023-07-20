@@ -1,17 +1,17 @@
 Title: Getting Started with RunPod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2023-07-17
+Modified: 2023-07-20
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
-Summary: This post helps you to get started with [RunPod](vhttps://runpod.io?ref=w18gds2n)
+Summary: This post helps you to get started with [RunPod](https://runpod.io?ref=2xxro4sy)
     Serverless for hosting and scaling your AI applications in the cloud.
 Status: Published
 
 
 ## What is RunPod?
 
-[RunPod](https://runpod.io?ref=w18gds2n) is a Cloud Hosting Provider that allows
+[RunPod](https://runpod.io?ref=2xxro4sy) is a Cloud Hosting Provider that allows
 you to rent Docker containers that are attached to various different sizes of
 GPU instances so that you can benefit from their Cloud GPU for running
 your AI tasks if you don't have a powerful enough
