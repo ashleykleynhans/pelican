@@ -270,6 +270,11 @@ GPU tiers are the servers that will be used for the workers
 for your endpoint.  The GPU tier you choose is dependent on the
 type of application you are running.  For example, an LLM typically
 needs a lot more VRAM than running inference using Stable Diffusion.
+You can assign priorities to the various different GPU tiers.  Once
+your priorities are assigned, you are able to limit your workers
+to using specific GPU types within that GPU tier, for example, if
+you select the 24GB GPU tier, you will be able to limit your workers
+to only using the 3090 GPU type and exclude the A5000 and L4 GPU types.
 
 #### Active Workers
 
