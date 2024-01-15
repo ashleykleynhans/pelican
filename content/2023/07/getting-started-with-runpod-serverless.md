@@ -1,7 +1,7 @@
 Title: Getting Started with RunPod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2023-07-20
+Modified: 2024-01-15
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
 Summary: This post helps you to get started with [RunPod](https://runpod.io?ref=2xxro4sy)
@@ -264,27 +264,38 @@ The Template is described above, and specifies the Docker image
 containing your application that should be pulled from the container
 registry (such as Docker Hub).
 
+#### GPU Tiers
+
+GPU tiers are the servers that will be used for the workers
+for your endpoint.  The GPU tier you choose is dependent on the
+type of application you are running.  For example, an LLM typically
+needs a lot more VRAM than running inference using Stable Diffusion.
+
+#### Active Workers
+
+Active workers will allow your Serverless endpoint to respond
+much faster, and reduce cold start time, but I don't recommend setting
+any Active workers due to the high cost of keeping them
+running constantly.
+
 #### Max Workers
 
 The Max Workers are the maximum number of servers that run your
 application so that your application can be scaled up automatically
 across multiple servers to meet demand.  The default of 3 is usually
-sufficient for development and testing purposes, but you will want
-to set Max Workers to at least 5 in production.
+sufficient for development and testing purposes.  If you set this to
+a value of 2 to 5, RunPod will provide you with additional workers
+(up to a maximum of 5) to help prevent your workers from being
+throttled.  I don't recommend setting this to a value of 1, because
+there is a very high chance that your worker will become throttled,
+and your requests will sit in the queue for a long time before being
+processed.
 
-#### GPU Types
+#### GPUs/Worker
 
-GPU types are the servers that will be used for the workers
-for your endpoint.  The GPU type you choose is dependent on the
-type of application you are running.  For example, an LLM typically
-needs a lot more VRAM than running inference using Stable Diffusion.
-
-#### Min Provisioned Workers
-
-Minimum Provisioned workers will allow your Serverless endpoint to respond
-much faster, and reduce cold start time, but I don't recommend setting
-any Min Provisioned workers due to the high cost of keeping them
-running constantly.
+If you select the 48GB GPU tier, you will be able to assign more
+than one GPU per worker.  This is only available to the 48GB tier
+and not any of the other GPU tiers.
 
 #### Idle Timeout
 
@@ -298,15 +309,14 @@ for most cases.
 FlashBoot is disabled by default, but you can enable it to reduce
 the majority of cold-starts down to 2 seconds, even for LLMs.
 
-#### Deployment Region (Advanced Setting)
+#### Data Centers (Advanced Setting)
 
-By default, your application will by deployed in both the
-United States, and Europe regions.  If you have strict compliance
-requirements such as GDPR for example, you will want to restrict
-the region to Europe only.
+By default, your application will by deployed in all data centers.
+If you have strict compliance requirements such as GDPR for example,
+you will want to restrict the data centers to Europe only.
 
-If you are using a Network Volume, the Deployment Region will
-be automatically adjusted to the region where your Network
+If you are using a Network Volume, the Data Center will
+be automatically adjusted to the data center where your Network
 Volume resides.
 
 #### Scale Type (Advanced Setting)
@@ -343,11 +353,15 @@ an application without using a Network Volume, but they are
 useful for certain use cases.
 
 Network Volumes need to be added within the GPU Cloud section of
-the RunPod console, and are only currently available in 3 data
+the RunPod console, and are only currently available in these data
 centers:
 
+* CA-MTL-1 (Canada)
 * EU-CZ-1 (Europe)
 * EU-RO-1 (Europe)
+* EU-SE-1 (Europe)
+* EUR-NO-1 (Europe)
+* US-KS-1 (United States)
 * US-KS-2 (United States)
 
 Unfortunately this also means that the GPU availability for
@@ -368,4 +382,6 @@ queue.
 * [Source Code to RunPod's Own Endpoints](https://github.com/runpod-workers)
 * [Source Code to My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper)
 * [Source Code to My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan)
+* [Source Code to My LLaVA Endpoint](https://github.com/ashleykleynhans/runpod-worker-llava)
+* [Source Code to My A1111 Stable Diffusion Endpoint](https://github.com/ashleykleynhans/runpod-worker-a1111)
 * [Source Code to My Oobabooga Text Generation Endpoint](https://github.com/ashleykleynhans/runpod-worker-oobabooga)
