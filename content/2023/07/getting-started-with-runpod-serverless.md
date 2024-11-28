@@ -1,7 +1,7 @@
 Title: Getting Started with RunPod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2024-01-15
+Modified: 2024-11-28
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
 Summary: This post helps you to get started with [RunPod](https://runpod.io?ref=2xxro4sy)
@@ -362,12 +362,16 @@ the RunPod console, and are only currently available in these data
 centers:
 
 * CA-MTL-1 (Canada)
+* CA-MTL-3 (Canada)
 * EU-CZ-1 (Europe)
 * EU-RO-1 (Europe)
 * EU-SE-1 (Europe)
-* EUR-NO-1 (Europe)
+* EUR-IS-1 (Europe)
+* US-GA-2 (United States)
 * US-KS-1 (United States)
 * US-KS-2 (United States)
+* US-OR-1 (United States)
+* US-TX-1 (United States)
 
 Unfortunately this also means that the GPU availability for
 your Serverless application will be pretty low due to the limited
