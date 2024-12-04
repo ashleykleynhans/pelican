@@ -1,4 +1,4 @@
-Title: Injecting Content-Type Header into Python Flask Webhooks
+Title: Injecting Missing Content-Type Header into Python Flask Webhooks
 Date: 2024-12-04
 Author: Ashley Kleynhans
 Modified: 2024-12-04
