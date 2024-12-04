@@ -121,7 +121,7 @@ MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {
             'css_class': 'highlight',
-            'pygments_style': 'solarized-dark',
+            'pygments_style': 'github-dark',
             'noclasses': True,
             'guess_lang': True,
         },
