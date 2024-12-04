@@ -4,8 +4,8 @@ Author: Ashley Kleynhans
 Modified: 2024-12-04
 Category: DevOps
 Tags: python, flask, webhooks
-Summary: This post helps you to automatically inject `Content-Type`
-    headers into your Python Flask Webhooks.
+Summary: This post helps you to automatically inject missing
+    `Content-Type` headers into your Python Flask Webhooks.
 Status: Published
 
 
