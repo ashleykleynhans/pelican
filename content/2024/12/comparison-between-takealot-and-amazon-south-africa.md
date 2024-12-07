@@ -35,6 +35,11 @@ of them.
    that already have their own sturdy packaging are not
    placed into boxes.
 6. The packaging tape on the boxes is very easy to remove.
+7. The product review process uses AI to moderate the reviews
+   and the review only requires manual approval if the AI
+   doesn't approve the review automatically, so if the
+   review guidelines are adhered to, product reviews are
+   approved very quickly.
 
 ### Cons
 
@@ -57,6 +62,8 @@ of them.
 10. No indication of last purchased date if the user views
     the product page for a product that they have previously
     purchased.
+11. When reviewing products, the user is unable to upload
+    photos or videos as part of their review.
 
 ## Amazon South Africa
 
@@ -74,6 +81,8 @@ of them.
    will display the date that the product was previously
    purchased, which is useful for accidentally purchasing the
    same product more than once.
+6. When reviewing products, the user is able to upload a photo
+   or video as part of their review.
 
 ### Cons
 
@@ -97,3 +106,5 @@ of them.
    at all.
 7. The user has to fight with the packaging tape to remove it
    from the boxes.
+8. The product review process seems to be manual, so it takes
+   a long time for product reviews to be approved.
