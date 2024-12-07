@@ -34,7 +34,7 @@ of them.
    from being damaged by the couriers, only large items
    that already have their own sturdy packaging are not
    placed into boxes.
-6. The packaging tape is very easy to remove.
+6. The packaging tape on the boxes is very easy to remove.
 
 ### Cons
 
@@ -80,7 +80,9 @@ of them.
    deals pages.
 5. The UI of the page to cancel order items is hideous,
    and only allows the user to cancel the entire quantity
-   instead of allowing the uer to specify a quantity.
+   instead of allowing the user to specify the quantity that
+   they want to cancel.
 6. The general UI and UX are very dated and not user-friendly
    at all.
-7. The user has to fight with the packaging tape to remove it.
+7. The user has to fight with the packaging tape to remove it
+   from the boxes.
