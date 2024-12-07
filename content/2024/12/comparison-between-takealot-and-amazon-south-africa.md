@@ -13,9 +13,9 @@ Status: Published
 
 I have been using Takealot for online shopping for as long
 as I can remember, but Amazon recently launched in South Africa
-to give Takealot some competition.  I have making many online
-purchaes on both since Black Friday 2024, and have decided to
-share a comparison between  Takealot and Amazon South Africa
+to give Takealot some competition.  I have making been many online
+purchases on both since Black Friday 2024, and have decided to
+share a comparison between Takealot and Amazon South Africa
 based on my personal experience of shopping from the two
 of them.
 
@@ -49,6 +49,9 @@ of them.
    you have to wait for it to be delivered and then schedule
    a return.
 7. No progress bar to show the percentage of deals claimed.
+8. Excessive use of boxes by either using oversized boxes or
+   placing each order item into separate boxes instead of
+   packaging everything together into a single box.
 
 ## Amazon South Africa
 
