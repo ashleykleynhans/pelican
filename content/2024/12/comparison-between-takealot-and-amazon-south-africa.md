@@ -48,8 +48,10 @@ of them.
 6. An order cannot be cancelled once the user has paid for it,
    you have to wait for it to be delivered and then schedule
    a return.
-7. No progress bar to show the percentage of deals claimed.
-8. Excessive use of boxes by either using oversized boxes or
+7. The user is able to review items before they are even
+   delivered.
+8. No progress bar to show the percentage of deals claimed.
+9. Excessive use of boxes by either using oversized boxes or
    placing each order item into separate boxes instead of
    packaging everything together into a single box.
 
@@ -68,7 +70,8 @@ of them.
 ### Cons
 
 1. Around 50% of the items that I ordered arrived with
-   broken or damaged boxes, or even boxes that had been opened.
+   broken or damaged boxes, or even boxes that had been opened
+   which is especially unacceptable when purchasing gifts.
 2. Some items are packed into soft courier bags instead of
    boxes, which causes items to be damaged by the couriers.
 3. Prices are not visible when browsing through the deals
