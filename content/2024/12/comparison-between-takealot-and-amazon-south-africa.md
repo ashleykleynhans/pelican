@@ -40,6 +40,10 @@ of them.
    doesn't approve the review automatically, so if the
    review guidelines are adhered to, product reviews are
    approved very quickly.
+8. Delivery drivers give the user a phone call if they
+   don't hear them hooting to ensure that the delivery is
+   not missed.
+9. Delivery handover is smooth and efficient.
 
 ### Cons
 
@@ -86,25 +90,36 @@ of them.
 
 ### Cons
 
-1. Around 50% of the items that I ordered arrived with
-   broken or damaged boxes, or even boxes that had been opened
-   which is especially unacceptable when purchasing gifts.
-2. Some items are packed into soft courier bags instead of
-   boxes, which causes items to be damaged by the couriers.
-3. Prices are not visible when browsing through the deals
-   pages.  The user has to click though to the product page
-   for each item to view the price of that specific item.
-4. The navigation on both the website and mobile app are very
-   buggy and they both jump and make the user lose track of
-   where they were while trying to scroll through the 
-   deals pages.
-5. The UI of the page to cancel order items is hideous,
-   and only allows the user to cancel the entire quantity
-   instead of allowing the user to specify the quantity that
-   they want to cancel.
-6. The general UI and UX are very dated and not user-friendly
-   at all.
-7. The user has to fight with the packaging tape to remove it
-   from the boxes.
-8. The product review process seems to be manual, so it takes
-   a long time for product reviews to be approved.
+1.  Around 50% of the items that I ordered arrived with
+    broken or damaged boxes, or even boxes that had been opened
+    which is especially unacceptable when purchasing gifts.
+2.  Some items are packed into soft courier bags instead of
+    boxes, which causes items to be damaged by the couriers.
+3.  Prices are not visible when browsing through the deals
+    pages.  The user has to click though to the product page
+    for each item to view the price of that specific item.
+4.  The navigation on both the website and mobile app are very
+    buggy and they both jump and make the user lose track of
+    where they were while trying to scroll through the 
+    deals pages.
+5.  The UI of the page to cancel order items is hideous,
+    and only allows the user to cancel the entire quantity
+    instead of allowing the user to specify the quantity that
+    they want to cancel.
+6.  The general UI and UX are very dated and not user-friendly
+    at all.
+7.  The user has to fight with the packaging tape to remove it
+    from the boxes.
+8.  The product review process seems to be manual, so it takes
+    a long time for product reviews to be approved.
+9.  Delivery drivers drive off if the user does not hear them
+    hooting, and also do not give the user sufficient time to
+    meet them before driving off.
+10. Delivery handover is slow and inefficient and requires
+    a lot of patience most of the time.
+
+## Conclusion
+
+- Takealot is generally a far superior experience.
+- Amazon South Africa has far more competitive pricing,
+  especially during Black Friday.
