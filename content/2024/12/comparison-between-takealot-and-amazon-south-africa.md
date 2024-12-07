@@ -38,22 +38,25 @@ of them.
 
 ### Cons
 
-1. Prices are often much higher than Amazon South Africa.
-2. Only a single collection point in my area which is inconvenient
-   and out of my way.
-3. Returns can be scheduled before an item is even delivered.
-4. Collections for returns cannot be rescheduled by the user.
-5. Notifications for wish list items seem to be based on price
-   changes, regardless of whether the price increases or decreases.
-6. An order cannot be cancelled once the user has paid for it,
-   you have to wait for it to be delivered and then schedule
-   a return.
-7. The user is able to review items before they are even
-   delivered.
-8. No progress bar to show the percentage of deals claimed.
-9. Excessive use of boxes by either using oversized boxes or
-   placing each order item into separate boxes instead of
-   packaging everything together into a single box.
+1.  Prices are often much higher than Amazon South Africa.
+2.  Only a single collection point in my area which is inconvenient
+    and out of my way.
+3.  Returns can be scheduled before an item is even delivered.
+4.  Collections for returns cannot be rescheduled by the user.
+5.  Notifications for wish list items seem to be based on price
+    changes, regardless of whether the price increases or decreases.
+6.  An order cannot be cancelled once the user has paid for it,
+    they have to wait for it to be delivered and then schedule
+    a return.
+7.  The user is able to review items before they are even
+    delivered.
+8.  No progress bar to show the percentage of deals claimed.
+9.  Excessive use of boxes by either using oversized boxes or
+    placing each order item into separate boxes instead of
+    packaging everything together into a single box.
+10. No indication of last purchased date if the user views
+    the product page for a product that they have previously
+    purchased.
 
 ## Amazon South Africa
 
@@ -66,6 +69,11 @@ of them.
 3. Order items can be cancelled before the order is packed.
 4. The deals page has a progress bar that shows the percentage
    of deals claimed.
+5. If the user clicks through to a product page for a product
+   that they have previously purchased, the page product page
+   will display the date that the product was previously
+   purchased, which is useful for accidentally purchasing the
+   same product more than once.
 
 ### Cons
 
