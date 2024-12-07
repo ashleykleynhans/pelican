@@ -48,25 +48,28 @@ of them.
 ### Cons
 
 1.  Prices are often much higher than Amazon South Africa.
-2.  Only a single collection point in my area which is inconvenient
+2.  Some merchants sell fake brand name products, for example
+    Levi's, Jeep, and a few of the "Parallel import"
+    perfumes.
+3.  Only a single collection point in my area which is inconvenient
     and out of my way.
-3.  Returns can be scheduled before an item is even delivered.
-4.  Collections for returns cannot be rescheduled by the user.
-5.  Notifications for wish list items seem to be based on price
+4.  Returns can be scheduled before an item is even delivered.
+5.  Collections for returns cannot be rescheduled by the user.
+6.  Notifications for wish list items seem to be based on price
     changes, regardless of whether the price increases or decreases.
-6.  An order cannot be cancelled once the user has paid for it,
+7.  An order cannot be cancelled once the user has paid for it,
     they have to wait for it to be delivered and then schedule
     a return.
-7.  The user is able to review items before they are even
+8.  The user is able to review items before they are even
     delivered.
-8.  No progress bar to show the percentage of deals claimed.
-9.  Excessive use of boxes by either using oversized boxes or
+9.  No progress bar to show the percentage of deals claimed.
+10. Excessive use of boxes by either using oversized boxes or
     placing each order item into separate boxes instead of
     packaging everything together into a single box.
-10. No indication of last purchased date if the user views
+11. No indication of last purchased date if the user views
     the product page for a product that they have previously
     purchased.
-11. When reviewing products, the user is unable to upload
+12. When reviewing products, the user is unable to upload
     photos or videos as part of their review.
 
 ## Amazon South Africa
