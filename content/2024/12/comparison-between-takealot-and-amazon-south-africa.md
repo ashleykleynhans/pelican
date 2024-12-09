@@ -1,7 +1,7 @@
 Title: Comparison between Takealot and Amazon South Africa
 Date: 2024-12-07
 Author: Ashley Kleynhans
-Modified: 2024-12-08
+Modified: 2024-12-09
 Category: eCommerce
 Tags: ecommerce, shopping
 Summary: This post does a comparison between Takealot and
@@ -119,10 +119,13 @@ of them.
     from the boxes.
 8.  The product review process seems to be manual, so it takes
     a long time for product reviews to be approved.
-9.  Delivery drivers drive off if the user does not hear them
+9.  Delivery drivers often request the user to sign for the
+    delivery even though a PIN is already required in order
+    to accept delivery.
+10. Delivery drivers drive off if the user does not hear them
     hooting, and also do not give the user sufficient time to
     meet them before driving off.
-10. Delivery handover is slow and inefficient and requires
+11. Delivery handover is slow and inefficient and requires
     a lot of patience most of the time.
 
 ## Conclusion
