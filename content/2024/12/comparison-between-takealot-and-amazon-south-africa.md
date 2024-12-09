@@ -58,7 +58,8 @@ of them.
     nowhere near the actual delivery address.
 5.  Only a single collection point in my area which is inconvenient
     and out of my way.
-6.  Collections for returns cannot be rescheduled by the user.
+6.  Collections for returns cannot be rescheduled by the user,
+    until the first collection attempt has failed.
 7.  Notifications for wish list items seem to be based on price
     changes, regardless of whether the price increases or decreases.
 8.  An order cannot be cancelled once the user has paid for it,
@@ -75,6 +76,9 @@ of them.
     purchased.
 13. When reviewing products, the user is unable to upload
     photos or videos as part of their review.
+14. Multiple orders are often delivered by multiple different
+    drivers instead of bundling orders for the same delivery
+    address together with the same driver.
 
 ## Amazon South Africa
 
@@ -97,7 +101,7 @@ of them.
 
 ### Cons
 
-1.  Around 50% of the items that I ordered arrived with
+1.  Some of the items that I ordered arrived with
     broken or damaged boxes, or even boxes that had been opened
     which is especially unacceptable when purchasing gifts.
 2.  Some items are packed into soft courier bags instead of
