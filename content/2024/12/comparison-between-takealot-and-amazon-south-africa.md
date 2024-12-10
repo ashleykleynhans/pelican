@@ -54,29 +54,27 @@ of them.
 3.  Sometimes a completely different and completely unrelated
     product is delivered instead of the one that was actually
     ordered.
-4.  Sometimes orders are sent to courier facilities that are
-    nowhere near the actual delivery address.
-5.  Only a single collection point in my area which is inconvenient
+4.  Only a single collection point in my area which is inconvenient
     and out of my way.
-6.  Collections for returns cannot be rescheduled by the user,
+5.  Collections for returns cannot be rescheduled by the user,
     until the first collection attempt has failed.
-7.  Notifications for wish list items seem to be based on price
+6.  Notifications for wish list items seem to be based on price
     changes, regardless of whether the price increases or decreases.
-8.  An order cannot be cancelled once the user has paid for it,
+7.  An order cannot be cancelled once the user has paid for it,
     they have to wait for it to be delivered and then schedule
     a return.
-9.  The user is able to review items before they are even
+8.  The user is able to review items before they are even
     delivered.
-10. No progress bar to show the percentage of deals claimed.
-11. Excessive use of boxes by either using oversized boxes or
+9.  No progress bar to show the percentage of deals claimed.
+10. Excessive use of boxes by either using oversized boxes or
     placing each order item into separate boxes instead of
     packaging everything together into a single box.
-12. No indication of last purchased date if the user views
+11. No indication of last purchased date if the user views
     the product page for a product that they have previously
     purchased.
-13. When reviewing products, the user is unable to upload
+12. When reviewing products, the user is unable to upload
     photos or videos as part of their review.
-14. Multiple orders are often delivered by multiple different
+13. Multiple orders are often delivered by multiple different
     drivers instead of bundling orders for the same delivery
     address together with the same driver.
 
