@@ -1,7 +1,7 @@
 Title: Comparison between Takealot and Amazon South Africa
 Date: 2024-12-07
 Author: Ashley Kleynhans
-Modified: 2024-12-09
+Modified: 2024-12-11
 Category: eCommerce
 Tags: ecommerce, shopping
 Summary: This post does a comparison between Takealot and
@@ -60,21 +60,32 @@ of them.
     until the first collection attempt has failed.
 6.  Notifications for wish list items seem to be based on price
     changes, regardless of whether the price increases or decreases.
-7.  An order cannot be cancelled once the user has paid for it,
+7.  There is no option to view all wish list products at once wnen
+    the user has more than one wish list.  They have to browse
+    though each wish list one by one.
+8.  When an incorrect product is delivered, and user requests a
+    replacement for the product they originally ordered, the
+    replacement order is shipped to the collection address for
+    the incorrect product instead of the same delivery address
+    as the original order.  It would actually be better for
+    the user to select a delivery address of their choice for
+    the replacement order instead of Takealot making incorrect
+    assumptions.
+9.  An order cannot be cancelled once the user has paid for it,
     they have to wait for it to be delivered and then schedule
     a return.
-8.  The user is able to review items before they are even
+10. The user is able to review items before they are even
     delivered.
-9.  No progress bar to show the percentage of deals claimed.
-10. Excessive use of boxes by either using oversized boxes or
+11. No progress bar to show the percentage of deals claimed.
+12. Excessive use of boxes by either using oversized boxes or
     placing each order item into separate boxes instead of
     packaging everything together into a single box.
-11. No indication of last purchased date if the user views
+13. No indication of last purchased date if the user views
     the product page for a product that they have previously
     purchased.
-12. When reviewing products, the user is unable to upload
+14. When reviewing products, the user is unable to upload
     photos or videos as part of their review.
-13. Multiple orders are often delivered by multiple different
+15. Multiple orders are often delivered by multiple different
     drivers instead of bundling orders for the same delivery
     address together with the same driver.
 
@@ -96,6 +107,9 @@ of them.
    same product more than once.
 6. When reviewing products, the user is able to upload a photo
    or video as part of their review.
+7. When browsing products in wish lists, there is an option for
+   the user to browse all of their wish lists at once, instead
+   of having to browse them one by one.
 
 ### Cons
 
