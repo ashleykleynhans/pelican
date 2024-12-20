@@ -1,7 +1,7 @@
 Title: Comparison between Takealot and Amazon South Africa
 Date: 2024-12-07
 Author: Ashley Kleynhans
-Modified: 2024-12-11
+Modified: 2024-12-20
 Category: eCommerce
 Tags: ecommerce, shopping
 Summary: This post does a comparison between Takealot and
@@ -23,27 +23,28 @@ of them.
 
 ### Pros
 
-1. Items hardly ever arrive damaged.
-2. User can immediately see the prices of items when browsing
-   through the various deals pages without having to click
-   through to the product page of each item.
-3. The website and mobile app are both user-friendly
-   and easy to navigate, and have modern UI and UX.
-4. It is simple to reschedule a delivery.
-5. Small items are always placed into boxes to prevent them
-   from being damaged by the couriers, only large items
-   that already have their own sturdy packaging are not
-   placed into boxes.
-6. The packaging tape on the boxes is very easy to remove.
-7. The product review process uses AI to moderate the reviews
-   and the review only requires manual approval if the AI
-   doesn't approve the review automatically, so if the
-   review guidelines are adhered to, product reviews are
-   approved very quickly.
-8. Delivery drivers give the user a phone call if they
-   don't hear them hooting to ensure that the delivery is
-   not missed.
-9. Delivery handover is smooth and efficient.
+1.  Items hardly ever arrive damaged.
+2.  Significantly larger product catalog.
+3.  User can immediately see the prices of items when browsing
+    through the various deals pages without having to click
+    through to the product page of each item.
+4.  The website and mobile app are both user-friendly
+    and easy to navigate, and have modern UI and UX.
+5.  It is simple to reschedule a delivery.
+6.  Small items are always placed into boxes to prevent them
+    from being damaged by the couriers, only large items
+    that already have their own sturdy packaging are not
+    placed into boxes.
+7.  The packaging tape on the boxes is very easy to remove.
+8.  The product review process uses AI to moderate the reviews
+    and the review only requires manual approval if the AI
+    doesn't approve the review automatically, so if the
+    review guidelines are adhered to, product reviews are
+    approved very quickly.
+9.  Delivery drivers give the user a phone call if they
+    don't hear them hooting to ensure that the delivery is
+    not missed.
+10. Delivery handover is smooth and efficient.
 
 ### Cons
 
@@ -118,34 +119,45 @@ of them.
     which is especially unacceptable when purchasing gifts.
 2.  Some items are packed into soft courier bags instead of
     boxes, which causes items to be damaged by the couriers.
-3.  Prices are not visible when browsing through the deals
+3.  Liquids aren't packaged properly and get packaged with
+    other items on the same order and then leak onto those
+    items.
+4.  There are products that have incorrect or deceptive images
+    on the product pages, which is very misleading.
+5.  Prices are not visible when browsing through the deals
     pages.  The user has to click though to the product page
     for each item to view the price of that specific item.
-4.  The navigation on both the website and mobile app are very
+6.  Some deals have a product limit per customer, for example
+    only a quantity of 2 of the specific item may be purchased
+    at the deal price.
+7.  Some products are categorised incorrectly into the incorrect
+    product category.
+8.  The navigation on both the website and mobile app are very
     buggy and they both jump and make the user lose track of
     where they were while trying to scroll through the 
     deals pages.
-5.  The UI of the page to cancel order items is hideous,
+9.  The UI of the page to cancel order items is hideous,
     and only allows the user to cancel the entire quantity
     instead of allowing the user to specify the quantity that
     they want to cancel.
-6.  The general UI and UX are very dated and not user-friendly
+10. The general UI and UX are very dated and not user-friendly
     at all.
-7.  The user has to fight with the packaging tape to remove it
+11. The user has to fight with the packaging tape to remove it
     from the boxes.
-8.  The product review process seems to be manual, so it takes
+12. The product review process seems to be manual, so it takes
     a long time for product reviews to be approved.
-9.  Delivery drivers often request the user to sign for the
+13. Delivery drivers often request the user to sign for the
     delivery even though a PIN is already required in order
     to accept delivery.
-10. Delivery drivers drive off if the user does not hear them
+14. Delivery drivers drive off if the user does not hear them
     hooting, and also do not give the user sufficient time to
     meet them before driving off.
-11. Delivery handover is slow and inefficient and requires
+15. Delivery handover is slow and inefficient and requires
     a lot of patience most of the time.
 
 ## Conclusion
 
 - Takealot is generally a far superior experience.
 - Amazon South Africa has far more competitive pricing,
-  especially during Black Friday.
+  for their daily and Black Friday deals if you get there
+  early enough before the deal gets sold out.
