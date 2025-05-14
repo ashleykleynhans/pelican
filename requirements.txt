@@ -3,3 +3,4 @@ markdown
 pelican-gist
 pymdown-extensions
 ghp-import
+bs4
