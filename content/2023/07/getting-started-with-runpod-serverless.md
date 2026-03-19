@@ -1,17 +1,17 @@
-Title: Getting Started with RunPod Serverless
+Title: Getting Started with Runpod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2024-11-28
+Modified: 2026-03-19
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
-Summary: This post helps you to get started with [RunPod](https://runpod.io?ref=2xxro4sy)
+Summary: This post helps you to get started with [Runpod](https://runpod.io?ref=2xxro4sy)
     Serverless for hosting and scaling your AI applications in the cloud.
 Status: Published
 
 
-## What is RunPod?
+## What is Runpod?
 
-[RunPod](https://runpod.io?ref=2xxro4sy) is a Cloud Hosting Provider that allows
+[Runpod](https://runpod.io?ref=2xxro4sy) is a Cloud Hosting Provider that allows
 you to rent Docker containers that are attached to various different sizes of
 GPU instances so that you can benefit from their Cloud GPU for running
 your AI tasks if you don't have a powerful enough
@@ -20,30 +20,31 @@ GPU to run them yourself.
 They offer various different types of services, including:
 
 * Dedicated and On-Demand GPU Instances.
-* Serverless GPU Hosting.
+* Serverless GPU and CPU Hosting.
 * AI API Endpoints.
 
-This post focuses on their Serverless GPU hosting which can be used
+This post focuses on their Serverless hosting which can be used
 to scale your application to hundreds of users.
 
 ## Serverless Key Concepts
 
-There are three main concepts:
+There are four main concepts:
 
 * Serverless Handler
 * Templates
 * Endpoints
+* Worker Types (Flex and Active)
 
 ### Serverless Handler
 
 This is a critical component for your application to function correctly
-within RunPod Serverless.  You need to import the `runpod` Python
+within Runpod Serverless.  You need to import the `runpod` Python
 module, and also ensure that you are using Python version 3.10.x because
-the latest RunPod module is not compatible with Python versions prior
+the latest Runpod module is not compatible with Python versions prior
 to version 3.10.x.
 
 The Serverless handler is usually implemented in a file called
-`rp_handler.py` (RunPod Handler) and looks something like the example
+`rp_handler.py` (Runpod Handler) and looks something like the example
 code below that will take a `name` as input and then send a greeting
 back.
 
@@ -69,11 +70,11 @@ def process_input(input):
 
 
 # ---------------------------------------------------------------------------- #
-#                                RunPod Handler                                #
+#                                Runpod Handler                                #
 # ---------------------------------------------------------------------------- #
 def handler(event):
     """
-    This is the handler function that will be called by RunPod serverless.
+    This is the handler function that will be called by Runpod serverless.
     """
     return process_input(event['input'])
 
@@ -85,7 +86,7 @@ if __name__ == '__main__':
 #### Local Testing
 
 It is useful to test your Serverless Handler code locally before deploying
-it to RunPod.  You can do this by creating a file called `test_input.json`
+it to Runpod.  You can do this by creating a file called `test_input.json`
 with a body that looks like this:
 
 ```json
@@ -123,7 +124,7 @@ INFO   | Local testing complete, exiting.
 ```
 
 Once you are happy with the results of your local testing,
-you are ready to deploy your application to RunPod Serverless.
+you are ready to deploy your application to Runpod Serverless.
 This will require you to build a Docker image containing your
 application code using a Dockerfile.
 
@@ -152,12 +153,12 @@ docker login
 
 When building your Docker image, it is best practice to
 use a version rather than `latest` as a tag, since the images
-are cached by the RunPod Serverless workers, and they will not know
+are cached by the Runpod Serverless workers, and they will not know
 that you have made a change to your image if you keep using the
 same tag.
 
-RunPod containers run on `amd64` architecture, so if you are using
-an M1/M2 Mac to build the Docker image, you will need to use `buildx`
+Runpod containers run on `amd64` architecture, so if you are using
+an Apple Silicon Mac to build the Docker image, you will need to use `buildx`
 and specify the `platform`, for example:
 
 ```bash
@@ -177,7 +178,7 @@ a Serverless Template for your image.
 
 ### Templates
 
-Navigate to your [RunPod Serverless Templates](
+Navigate to your [Runpod Serverless Templates](
 https://www.runpod.io/console/serverless/user/templates) and click
 the `New Template` button.
 
@@ -193,7 +194,7 @@ use a private Docker registry rather than the public Docker Hub registry,
 you will also need to provide `Container Registry Credentials`.  The
 credentials are not required if you use a Public registry.
 
-![RunPod Template Example]({static}/images/runpod-template.png)
+![Runpod Template Example]({static}/images/runpod-template.png)
 
 1. Enter a name for your template.
 2. Enter the Docker image name for the Docker image that you want to use
@@ -222,7 +223,7 @@ designed for GPU Cloud within Serverless.
 
 ### Endpoints
 
-Navigate to your [RunPod Serverless Endpoints](
+Navigate to your [Runpod Serverless Endpoints](
 https://www.runpod.io/console/serverless/user/endpoints) and click
 the `New Endpoint` button.
 
@@ -230,7 +231,7 @@ An endpoint is your actual Serverless Endpoint that will provide a
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
 API endpoint for serving your application.
 
-![RunPod Endpoint Example]({static}/images/runpod-endpoint-basic.png)
+![Runpod Endpoint Example]({static}/images/runpod-endpoint-basic.png)
 
 When adding a new Endpoint, you will need to configure a few things:
 
@@ -242,12 +243,12 @@ When adding a new Endpoint, you will need to configure a few things:
 You can also optionally configure:
 
 * Min Provisioned Workers
-* Ide Timeout
+* Idle Timeout
 * FlashBoot
 
 And additional Advanced options:
 
-![RunPod Advanced Endpoint Example]({static}/images/runpod-endpoint-advanced.png)
+![Runpod Advanced Endpoint Example]({static}/images/runpod-endpoint-advanced.png)
 
 * Deployment Region
 * Scale Type
@@ -276,11 +277,30 @@ to using specific GPU types within that GPU tier, for example, if
 you select the 24GB GPU tier, you will be able to limit your workers
 to only using the 3090 GPU type and exclude the A5000 and L4 GPU types.
 
-#### Active Workers
+The available GPU tiers are:
 
-Active workers will allow your Serverless endpoint to respond
-much faster, and reduce cold start time, but I don't recommend setting
-any Active workers due to the high cost of keeping them
+| Tier      | VRAM   | Example GPUs                |
+|-----------|--------|-----------------------------|
+| 16 GB     | 16 GB  | A4000, A4500, RTX 4000      |
+| 24 GB     | 24 GB  | L4, A5000, RTX 3090         |
+| 24 GB PRO | 24 GB  | RTX 4090 PRO                |
+| 48 GB     | 48 GB  | A6000, A40                  |
+| 48 GB PRO | 48 GB  | L40, L40S, RTX 6000 Ada PRO |
+| 80 GB     | 80 GB  | A100                        |
+| 80 GB PRO | 80 GB  | H100 PRO                    |
+| 141 GB    | 141 GB | H200 PRO                    |
+| 180 GB    | 180 GB | B200                        |
+
+CPU-only workers are also available if your application does
+not require a GPU.
+
+#### Active (Provisioned) Workers
+
+Active workers run 24/7 and allow your Serverless endpoint to respond
+much faster by eliminating cold start time.  Runpod offers up to
+a 30% discount on Active workers compared to on-demand pricing, but
+I still don't recommend setting any Active workers unless you have
+consistent traffic that justifies the cost of keeping them
 running constantly.
 
 #### Max Workers
@@ -289,7 +309,7 @@ The Max Workers are the maximum number of servers that run your
 application so that your application can be scaled up automatically
 across multiple servers to meet demand.  The default of 3 is usually
 sufficient for development and testing purposes.  If you set this to
-a value of 2 to 5, RunPod will provide you with additional workers
+a value of 2 to 5, Runpod will provide you with additional workers
 (up to a maximum of 5) to help prevent your workers from being
 throttled.  I don't recommend setting this to a value of 1, because
 there is a very high chance that your worker will become throttled,
@@ -298,9 +318,8 @@ processed.
 
 #### GPUs/Worker
 
-If you select the 48GB GPU tier, you will be able to assign more
-than one GPU per worker.  This is only available to the 48GB tier
-and not any of the other GPU tiers.
+You can assign more than one GPU per worker for GPU tiers
+that support multi-GPU configurations.
 
 #### Idle Timeout
 
@@ -311,8 +330,8 @@ for most cases.
 
 #### FlashBoot
 
-FlashBoot is disabled by default, but you can enable it to reduce
-the majority of cold-starts down to 2 seconds, even for LLMs.
+FlashBoot is now enabled by default and delivers sub-second cold
+starts at no additional cost.
 
 #### Data Centers (Advanced Setting)
 
@@ -353,42 +372,65 @@ A Network Volume is basically Network Storage (similar to NFS).
 You can use a Network Volume for all your workers to be able to
 access the same files, for example if you have multiple different
 models that you want to use with your endpoint.  You don't need
-a Network Volume to use RunPod Serverless, you can still deploy
+a Network Volume to use Runpod Serverless, you can still deploy
 an application without using a Network Volume, but they are
 useful for certain use cases.
 
 Network Volumes need to be added within the GPU Cloud section of
-the RunPod console, and are only currently available in these data
-centers:
+the Runpod console.  Runpod has significantly expanded their data
+center presence and now has GPUs across 31+ global regions,
+including locations in the United States, Canada, Europe, and
+Asia-Pacific (including Japan and Australia).
 
-* CA-MTL-1 (Canada)
-* CA-MTL-3 (Canada)
-* EU-CZ-1 (Europe)
-* EU-RO-1 (Europe)
-* EU-SE-1 (Europe)
-* EUR-IS-1 (Europe)
-* US-GA-2 (United States)
-* US-KS-1 (United States)
-* US-KS-2 (United States)
-* US-OR-1 (United States)
-* US-TX-1 (United States)
+You can attach multiple Network Volumes from different data
+centers to a single endpoint for improved resilience and GPU
+availability.  Check the Runpod console for the current list
+of data centers that support Network Volumes, as this list
+is frequently updated.
 
-Unfortunately this also means that the GPU availability for
-your Serverless application will be pretty low due to the limited
-amount of data centers in which the Network Volumes are available
-and could lead to your requests waiting in the queue for extended
-periods of time if you use a region with low GPU availability for
-the particular GPU type you require.   At the time of writing, the
-highest GPU availability is for `RTX 4090` in `EU-RO-1`.  If
-you place your Network Volume in any other data center, you could
-experience high delays in your requests being picked up from the
-queue.
+### Worker Types
+
+Runpod Serverless has two worker types:
+
+* **Flex Workers** scale from zero to your configured max workers
+  based on demand.  You only pay for the time your workers are
+  actively processing requests.  This is the default and recommended
+  type for most use cases.
+* **Active Workers** run 24/7 and eliminate cold start time entirely.
+  They are best suited for applications with consistent, predictable
+  traffic.  Runpod offers up to a 30% discount on Active workers.
+
+### Advanced Handler Features
+
+Since the initial release of the Runpod SDK, several new handler
+types have been added:
+
+* **Streaming Handlers** use `yield` to return results incrementally,
+  which is useful for LLMs and other applications that produce output
+  progressively.  Streaming results can be consumed via the `/stream`
+  endpoint.
+* **Async Handlers** support `async`/`await` for concurrent I/O
+  operations.
+* **Concurrent Handlers** allow a single worker to process multiple
+  requests simultaneously, which is useful for lightweight operations.
+
+Additional SDK features include:
+
+* **Progress Updates** via `runpod.serverless.progress_update()` to
+  report progress back to the caller during long-running jobs.
+* **Worker Refresh** by returning `{"refresh_worker": True}` in your
+  handler response to reset worker state between jobs.
+* **Local API Server** by passing `--rp_serve_api` when running your
+  handler locally, which starts a local FastAPI server that mimics
+  the production endpoint for more realistic testing.
 
 ## Resources
 
+* [Runpod Serverless Documentation](https://docs.runpod.io/serverless/overview)
+* [Runpod Python SDK on GitHub](https://github.com/runpod/runpod-python)
+* [Runpod Official Base Docker Images](https://github.com/runpod/containers)
 * [YouTube Tutorials by Generative Labs](https://www.youtube.com/@generativelabs/videos)
-* [RunPod's Blog Post on Creating a Custom Basic API Endpoint](https://blog.runpod.io/serverless-create-a-basic-api/)
-* [Source Code to RunPod's Own Endpoints](https://github.com/runpod-workers)
+* [Source Code to Runpod's Own Endpoints](https://github.com/runpod-workers)
 * [Source Code to My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper)
 * [Source Code to My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan)
 * [Source Code to My LLaVA Endpoint](https://github.com/ashleykleynhans/runpod-worker-llava)
