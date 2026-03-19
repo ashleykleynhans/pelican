@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-pelican content -o output -s publishconf.py
+/Users/ashley/src/personal/blog/.venv/bin/pelican content -o output -s publishconf.py
 
 # This can remove your new articles so add them in first
 cp index.html output/index.html
