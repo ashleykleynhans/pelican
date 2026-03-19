@@ -14,8 +14,8 @@ theme.
 git clone https://github.com/ashleykleynhans/pelican
 git submodule update --init
 cd pelican
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip3 install -r requirements.txt
 pelican -r -l
 ```
