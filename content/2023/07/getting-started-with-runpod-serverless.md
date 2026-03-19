@@ -11,7 +11,7 @@ Status: Published
 
 ## What is Runpod?
 
-[Runpod](https://runpod.io?ref=2xxro4sy) is a Cloud Hosting Provider that allows
+[Runpod](https://runpod.io?ref=2xxro4sy){:target="_blank"} is a Cloud Hosting Provider that allows
 you to rent Docker containers that are attached to various different sizes of
 GPU instances so that you can benefit from their Cloud GPU for running
 your AI tasks if you don't have a powerful enough
@@ -179,16 +179,16 @@ a Serverless Template for your image.
 ### Templates
 
 Navigate to your [Runpod Serverless Templates](
-https://www.runpod.io/console/serverless/user/templates) and click
+https://console.runpod.io/serverless){:target="_blank"} and click
 the `New Template` button.
 
-A template is  a specification for the [Docker](https://www.docker.com/)
+A template is  a specification for the [Docker](https://www.docker.com/){:target="_blank"}
 containers that will run your Serverless application.
 
 The template specifies the Docker image that will be used, the container
 disk size, a Docker command (usually not required), and any environment variables.
 
-Usually [Docker Hub](https://hub.docker.com/) is used to store Docker images,
+Usually [Docker Hub](https://hub.docker.com/){:target="_blank"} is used to store Docker images,
 but you can also use other Docker container registries.  If you choose to
 use a private Docker registry rather than the public Docker Hub registry,
 you will also need to provide `Container Registry Credentials`.  The
@@ -224,11 +224,11 @@ designed for GPU Cloud within Serverless.
 ### Endpoints
 
 Navigate to your [Runpod Serverless Endpoints](
-https://www.runpod.io/console/serverless/user/endpoints) and click
+https://console.runpod.io/serverless){:target="_blank"} and click
 the `New Endpoint` button.
 
 An endpoint is your actual Serverless Endpoint that will provide a
-[REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+[REST](https://en.wikipedia.org/wiki/Representational_state_transfer){:target="_blank"}
 API endpoint for serving your application.
 
 ![Runpod Endpoint Example]({static}/images/runpod-endpoint-basic.png)
@@ -426,13 +426,13 @@ Additional SDK features include:
 
 ## Resources
 
-* [Runpod Serverless Documentation](https://docs.runpod.io/serverless/overview)
-* [Runpod Python SDK on GitHub](https://github.com/runpod/runpod-python)
-* [Runpod Official Base Docker Images](https://github.com/runpod/containers)
-* [YouTube Tutorials by Generative Labs](https://www.youtube.com/@generativelabs/videos)
-* [Source Code to Runpod's Own Endpoints](https://github.com/runpod-workers)
-* [Source Code to My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper)
-* [Source Code to My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan)
-* [Source Code to My LLaVA Endpoint](https://github.com/ashleykleynhans/runpod-worker-llava)
-* [Source Code to My A1111 Stable Diffusion Endpoint](https://github.com/ashleykleynhans/runpod-worker-a1111)
-* [Source Code to My Oobabooga Text Generation Endpoint](https://github.com/ashleykleynhans/runpod-worker-oobabooga)
+* [Runpod Serverless Documentation](https://docs.runpod.io/serverless/overview){:target="_blank"}
+* [Runpod Python SDK on GitHub](https://github.com/runpod/runpod-python){:target="_blank"}
+* [Runpod Official Base Docker Images](https://github.com/runpod/containers){:target="_blank"}
+* [YouTube Tutorials by Generative Labs](https://www.youtube.com/@generativelabs/videos){:target="_blank"}
+* [Source Code to Runpod's Own Endpoints](https://github.com/runpod-workers){:target="_blank"}
+* [Source Code to My Face Swap Endpoint](https://github.com/ashleykleynhans/runpod-worker-inswapper){:target="_blank"}
+* [Source Code to My Upscaling Endpoint](https://github.com/ashleykleynhans/runpod-worker-real-esrgan){:target="_blank"}
+* [Source Code to My LLaVA Endpoint](https://github.com/ashleykleynhans/runpod-worker-llava){:target="_blank"}
+* [Source Code to My A1111 Stable Diffusion Endpoint](https://github.com/ashleykleynhans/runpod-worker-a1111){:target="_blank"}
+* [Source Code to My Oobabooga Text Generation Endpoint](https://github.com/ashleykleynhans/runpod-worker-oobabooga){:target="_blank"}
