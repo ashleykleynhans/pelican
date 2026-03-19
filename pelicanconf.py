@@ -149,6 +149,12 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+ABUSEIPDB_VERIFICATION = 'R0J2vxpQ'
+ABUSEIPDB_BADGE = {
+    'url': 'https://www.abuseipdb.com/user/155510',
+    'image': 'https://www.abuseipdb.com/contributor/155510.svg',
+}
+
 DISQUS_SITENAME = 'trapdoor-cloud'
 DISQUS_COMMENT_COUNT = True
 
