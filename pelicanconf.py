@@ -35,7 +35,6 @@ GITHUB_CORNER_URL = 'https://github.com/ashleykleynhans/pelican'
 
 SOCIAL = (
     ('github', 'https://github.com/ashleykleynhans'),
-    ('stack-overflow', 'https://stackoverflow.com/users/817324/ashley-kleynhans'),
     ('linkedin', 'https://www.linkedin.com/in/ashleykleynhans')
 )
 
@@ -58,6 +57,7 @@ CC_LICENSE = {
 }
 
 COPYRIGHT_YEAR = datetime.now().year
+COPYRIGHT_NAME = AUTHOR
 DEFAULT_PAGINATION = 10
 STATIC_CHECK_IF_MODIFIED = True
 
