@@ -32,6 +32,7 @@ sudo apt update
 ```bash
 sudo systemctl stop elasticsearch
 sudo apt install --only-upgrade elasticsearch
+sudo systemctl daemon-reload
 sudo systemctl start elasticsearch
 curl -s localhost:9200 | grep number
 ```
