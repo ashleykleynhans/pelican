@@ -42,6 +42,32 @@ curl -s localhost:9200 | grep number
 ```bash
 sudo systemctl stop kibana
 sudo apt install --only-upgrade kibana
+```
+
+### Fix Missing Encryption Key
+
+!!! danger
+    Kibana 9.x requires encryption keys to be set. Without them Kibana
+    will return **500 errors** on startup.
+
+Generate the keys:
+
+```bash
+sudo /usr/share/kibana/bin/kibana-encryption-keys generate
+```
+
+Add the three generated lines to the bottom of `/etc/kibana/kibana.yml`:
+
+```yaml
+xpack.encryptedSavedObjects.encryptionKey: "your-generated-key-here"
+xpack.reporting.encryptionKey: "your-generated-key-here"
+xpack.security.encryptionKey: "your-generated-key-here"
+```
+
+Then start Kibana:
+
+```bash
+sudo systemctl daemon-reload
 sudo systemctl start kibana
 ```
 
@@ -61,6 +87,7 @@ sudo systemctl start logstash
 ```bash
 sudo systemctl stop filebeat
 sudo apt install --only-upgrade filebeat
+sudo systemctl daemon-reload
 sudo systemctl start filebeat
 ```
 

@@ -1,10 +1,15 @@
 Title: About Me
 Date: 2023-01-18
+Modified: 2026-03-26
 Summary: About me
 Slug: about
 
+## Who I Am
+
 I am a DevOps Engineer from a Software Engineering background, with
 over 20 years of experience, and reside in Johannesburg, South Africa.
+
+## How It All Started
 
 My very first computer was a [Spectravideo SVI-728](https://en.wikipedia.org/wiki/SVI-728),
 on which I taught myself [BASIC](https://en.wikipedia.org/wiki/BASIC).
@@ -34,6 +39,8 @@ which we used to exchange emails back in the days before the internet.
 I started off with a 1200bps modem, which I then upgraded to 28,800bps,
 and finally to 57600bps.
 
+## Discovering the Internet
+
 My sister gave me a [net magazine](https://en.wikipedia.org/wiki/Net_(magazine))
 for Christmas in 1994, and it came with a free internet subscription,
 which got me interested in the internet.
@@ -47,6 +54,8 @@ of paying each other.  My server was running the
 distribution, and I used it to teach myself Linux as well as
 [PHP](https://en.wikipedia.org/wiki/PHP).
 
+## Breaking Into the Industry
+
 In 1999, I got a full time job working support at
 a different ISP where I handled technical support for dial-up
 customers, and then moved my server into the server farm of my
@@ -56,13 +65,15 @@ thanks to my knowledge I had gained from hosting my own Linux server.
 
 My main responsibilities were managing the DNS servers, web servers,
 and the [Aardvark](https://www.itweb.co.za/content/j5alrMQln8N7pYQk)
-search engine (not the one that was acquired by Google). I knew 
+search engine (not the one that was acquired by Google). I knew
 what some of the pain points were from working in the call centre,
 where we had to log tickets for simple things such as resetting
 customer passwords, so I taught myself
 [Perl](https://en.wikipedia.org/wiki/Perl) and built tools
 to enable the call centre to assist customers in real time
 and more efficiently.
+
+## Going International
 
 In 2002, I moved to the UK to join my ex-wife and got a job
 working for [Motorola](https://en.wikipedia.org/wiki/Motorola)
@@ -92,6 +103,8 @@ would automatically sync our database with the company LDAP/AD
 servers to remove any ex employees, for which I was awarded
 another Bravo award.
 
+## Back in South Africa
+
 In 2007, I moved back to South Africa and got a job as a Perl
 Developer in the medical industry.  In 2008, I got a job
 as a Senior PHP Developer in the online dating industry.
@@ -101,6 +114,8 @@ I went to work for the [Mxit](https://en.wikipedia.org/wiki/Mxit)
 instant messaging app.  In 2013, I went to work for the
 [Seecrypt](https://www.seecrypt.com/) Secure Voice and
 Messaging app.
+
+## Leadership Roles
 
 In 2014, I became a Software Architect working for one of
 the largest eCommerce websites in Nigeria and in 2015,
@@ -114,6 +129,8 @@ Investments in Nigeria, where we were responsible for building
 the Paylater app (which was rebranded as
 [Carbon](https://ng.getcarbon.co/)), where I was unfortunately
 laid off.
+
+## Finding My Passion
 
 I then went back to working in the medical industry, as
 well as a few startups including IoT and eventually decided
