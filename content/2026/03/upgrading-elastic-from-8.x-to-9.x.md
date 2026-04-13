@@ -1,7 +1,7 @@
 Title: Upgrading Elastic Stack From 8.x to 9.x on Ubuntu 24.04
 Date: 2026-03-26
 Author: Ashley Kleynhans
-Modified: 2026-03-30
+Modified: 2026-04-13
 Category: DevOps
 Tags: elastic, ubuntu, devops
 Summary: In this post, I will walk you through the process that I followed to upgrade my Elastic Stack from version 8.x to 9.x on Ubuntu 24.04 LTS.
@@ -104,6 +104,43 @@ sudo systemctl stop filebeat
 sudo apt install --only-upgrade filebeat
 sudo systemctl daemon-reload
 sudo systemctl start filebeat
+```
+
+#### Unique `id` Required for Every `filestream` Input
+
+From Filebeat 9.x onwards, **every `filestream` input must have a
+unique `id`**. If two or more `filestream` inputs share the same
+`id` (or any of them omits `id` entirely), Filebeat will refuse to
+start and log an error similar to:
+
+```
+filestream input with ID 'my-id' already exists, this will
+lead to data duplication, please use a different ID
+```
+
+Review `/etc/filebeat/filebeat.yml` and every file under
+`/etc/filebeat/inputs.d/` (or whichever
+`filebeat.config.inputs.path` points at) and make sure each
+`- type: filestream` block has its own distinct `id`:
+
+```yaml
+filebeat.inputs:
+  - type: filestream
+    id: nginx-access
+    paths:
+      - /var/log/nginx/access.log
+
+  - type: filestream
+    id: nginx-error
+    paths:
+      - /var/log/nginx/error.log
+```
+
+After fixing the IDs, restart Filebeat and confirm it is running:
+
+```bash
+sudo systemctl restart filebeat
+sudo systemctl status filebeat
 ```
 
 ## Step 7: Verify
