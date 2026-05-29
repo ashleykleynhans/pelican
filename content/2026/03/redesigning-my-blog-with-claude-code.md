@@ -6,6 +6,7 @@ Category: AI
 Tags: ai, claude, pelican, devops
 Summary: I used Claude Code with the Superpowers skill to completely redesign my Pelican blog theme in a single session.
 Status: Published
+Cover: images/covers/redesigning-my-blog-with-claude-code.png
 
 ## Before
 

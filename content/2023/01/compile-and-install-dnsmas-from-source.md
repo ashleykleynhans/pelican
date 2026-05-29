@@ -12,6 +12,7 @@ Summary: This post walks you through the process of compiling and
     network unreachable errors when resolving upstream DNS entries
     to IPv6 addresses.
 Status: Published
+Cover: images/covers/compile-and-install-dnsmas-from-source.png
 
 ## Background
 

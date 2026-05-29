@@ -5,3 +5,4 @@ pymdown-extensions
 ghp-import
 bs4
 pytz
+Pillow

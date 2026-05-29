@@ -7,6 +7,7 @@ Tags: devops, runpod, serverless, ai, gpu, cloud, docker
 Summary: This post helps you to get started with [Runpod](https://runpod.io?ref=2xxro4sy)
     Serverless for hosting and scaling your AI applications in the cloud.
 Status: Published
+Cover: images/covers/getting-started-with-runpod-serverless.png
 
 
 ## What is Runpod?

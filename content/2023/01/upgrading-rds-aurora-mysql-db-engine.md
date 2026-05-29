@@ -6,6 +6,7 @@ Category: DevOps
 Tags: devops, aws, rds, aurora, mysql
 Summary: In this post, I will walk you through the process of upgrading an RDS Aurora MySQL DB engine with minimal downtime.
 Status: Published
+Cover: images/covers/upgrading-rds-aurora-mysql-db-engine.png
 
 This procedure explains how to switch over from an existing
 Aurora MySQL RDS cluster running a specific engine version to a

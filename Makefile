@@ -1,4 +1,5 @@
 PY?=
+PYTHON?=.venv/bin/python
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -54,6 +55,9 @@ js:
 
 assets: css js
 
+covers:
+	"$(PYTHON)" scripts/generate_covers.py
+
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
@@ -79,4 +83,4 @@ publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 
-.PHONY: css js assets html help clean regenerate serve serve-global devserver publish
+.PHONY: css js assets covers html help clean regenerate serve serve-global devserver publish

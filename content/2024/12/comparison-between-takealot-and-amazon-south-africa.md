@@ -7,6 +7,7 @@ Tags: ecommerce, shopping
 Summary: This post does a comparison between Takealot and
     Amazon South Africa.
 Status: Published
+Cover: images/covers/comparison-between-takealot-and-amazon-south-africa.png
 
 
 ## Introduction

@@ -8,6 +8,7 @@ Summary: This post walks you through the process of installing CheckMK
     agent on macOS servers so that they can be monitored by your
     CheckMK server.
 Status: Published
+Cover: images/covers/install-checkmk-agent-on-macos.png
 
 ## Installation Procedure
 

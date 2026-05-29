@@ -7,6 +7,7 @@ Tags: macos, vagrant, parallels, vm
 Summary: This post helps you to resolve macOS kernel panic issues
     when running Vagrant and Parallels with NFS synced folders.
 Status: Published
+Cover: images/covers/resolving-macos-kernel-panic-issues-with-vagrant-and-parallels.png
 
 ## Introduction
 
