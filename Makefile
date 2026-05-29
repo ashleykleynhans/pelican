@@ -44,6 +44,16 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
+css:
+	cd themes/flex/static/stylesheet && \
+	npx --yes -p less -p less-plugin-clean-css lessc --clean-css style.less style.min.css
+
+js:
+	cd themes/flex/static/dark-theme && \
+	npx --yes terser dark-theme.js -c -m -o dark-theme.min.js
+
+assets: css js
+
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
@@ -69,4 +79,4 @@ publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 
-.PHONY: html help clean regenerate serve serve-global devserver publish 
+.PHONY: css js assets html help clean regenerate serve serve-global devserver publish
