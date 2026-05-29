@@ -91,7 +91,19 @@ PLUGIN_PATHS = [
 PLUGINS = [
     'sitemap',
     'post_stats',
-    'neighbors'
+    'neighbors',
+    'related_posts'
+]
+
+# Related posts (tag-driven); shown on article pages
+RELATED_POSTS_MAX = 5
+
+# Curated, ordered list of article slugs for the homepage "Featured" section.
+# Edit freely; an empty list hides the section.
+FEATURED_POSTS = [
+    'getting-started-with-runpod-serverless',
+    'upgrading-elastic-stack-from-8x-to-9x-on-ubuntu-2404',
+    'upgrading-rds-aurora-mysql-db-engine-version-with-minimal-downtime',
 ]
 
 # Sitemap Settings
