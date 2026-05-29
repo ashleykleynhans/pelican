@@ -5,6 +5,9 @@ SITEURL = ''
 SITENAME = "Ashley's Blog"
 SITETITLE = 'Ashley Kleynhans'
 SITESUBTITLE = 'DevOps Engineer'
+SITEDESCRIPTION = ('Articles on DevOps, cloud infrastructure, AI deployment, '
+                   'and automation by Ashley Kleynhans, a DevOps engineer with '
+                   'over 20 years of experience.')
 BROWSER_COLOR = '#333333'
 SITELOGO = SITEURL + '/images/profile.jpeg'
 FAVICON = SITEURL + '/favicon.ico'
