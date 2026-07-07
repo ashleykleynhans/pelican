@@ -11,9 +11,9 @@ theme.
 ## Build and run locally
 
 ```bash
-git clone https://github.com/ashleykleynhans/pelican
+git clone https://github.com/ashleykleynhans/blog
 git submodule update --init
-cd pelican
+cd blog
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
