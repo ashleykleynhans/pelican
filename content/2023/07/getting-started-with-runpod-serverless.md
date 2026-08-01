@@ -1,7 +1,7 @@
 Title: Getting Started with Runpod Serverless
 Date: 2023-07-16
 Author: Ashley Kleynhans
-Modified: 2026-03-19
+Modified: 2026-08-01
 Category: DevOps
 Tags: devops, runpod, serverless, ai, gpu, cloud, docker
 Summary: This post helps you to get started with [Runpod](https://runpod.io?ref=2xxro4sy)
@@ -40,9 +40,8 @@ There are four main concepts:
 
 This is a critical component for your application to function correctly
 within Runpod Serverless.  You need to import the `runpod` Python
-module, and also ensure that you are using Python version 3.10.x because
-the latest Runpod module is not compatible with Python versions prior
-to version 3.10.x.
+module, and also ensure that you are using Python 3.10 or higher because
+the Runpod module requires Python 3.10+.
 
 The Serverless handler is usually implemented in a file called
 `rp_handler.py` (Runpod Handler) and looks something like the example
@@ -177,6 +176,14 @@ docker push username/imagename:tag
 Once your image is pushed to Docker Hub, you are ready to create
 a Serverless Template for your image.
 
+#### Deploying directly from GitHub
+
+As an alternative to building and pushing Docker images manually,
+Runpod supports deploying workers directly from a GitHub repository
+using their GitHub integration. This streamlines the workflow by
+automatically building and deploying your worker whenever you push
+changes to the configured branch.
+
 ### Templates
 
 Navigate to your [Runpod Serverless Templates](
@@ -255,6 +262,24 @@ And additional Advanced options:
 * Scale Type
 * Network Volume
 
+#### Endpoint Types
+
+Runpod Serverless offers two types of endpoints:
+
+* **Queue-based endpoints** use a built-in queueing system with
+  guaranteed execution and automatic retries. This is the
+  traditional endpoint type and is ideal for async tasks, batch
+  processing, and long-running jobs using handler functions.
+* **Load balancing endpoints** route traffic directly to workers
+  without a queue, distributing requests across the worker pool.
+  These are designed for low-latency, real-time applications and
+  allow you to define custom API endpoints using any HTTP
+  framework of your choice, such as FastAPI or Flask, without
+  requiring a handler function.
+
+This post focuses on queue-based endpoints, which use a handler
+function to process requests.
+
 #### Endpoint Name
 
 The endpoint name is a unique name for you to easily identify your
@@ -280,17 +305,18 @@ to only using the 3090 GPU type and exclude the A5000 and L4 GPU types.
 
 The available GPU tiers are:
 
-| Tier      | VRAM   | Example GPUs                |
-|-----------|--------|-----------------------------|
-| 16 GB     | 16 GB  | A4000, A4500, RTX 4000      |
-| 24 GB     | 24 GB  | L4, A5000, RTX 3090         |
-| 24 GB PRO | 24 GB  | RTX 4090 PRO                |
-| 48 GB     | 48 GB  | A6000, A40                  |
-| 48 GB PRO | 48 GB  | L40, L40S, RTX 6000 Ada PRO |
-| 80 GB     | 80 GB  | A100                        |
-| 80 GB PRO | 80 GB  | H100 PRO                    |
-| 141 GB    | 141 GB | H200 PRO                    |
-| 180 GB    | 180 GB | B200                        |
+| Tier      | VRAM   | Example GPUs                                     |
+|-----------|--------|--------------------------------------------------|
+| 16 GB     | 16 GB  | RTX 2000 Ada, RTX 4000 Ada, RTX A4500, RTX A4000 |
+| 24 GB     | 24 GB  | RTX 3090, L4, RTX A5000, PRO 6000 MIG 24GB       |
+| 24 GB PRO | 24 GB  | RTX 4090                                         |
+| 32 GB PRO | 32 GB  | NVIDIA B300 SXM6 AC MIG 1g.34gb, RTX 5090        |
+| 48 GB     | 48 GB  | A40, RTX A6000                                   |
+| 48 GB PRO | 48 GB  | L40, L40S, RTX 6000 Ada, PRO 6000 MIG 48GB       |
+| 80 GB PRO | 80 GB  | H100 SXM, H100 NVL, H100 PCIe                    |
+| 96 GB PRO | 96 GB  | RTX PRO 6000 MaxQ, RTX PRO 6000, RTX PRO 6000 WK |
+| 141 GB    | 141 GB | H200 SXM                                         |
+| 180 GB    | 180 GB | B200                                             |
 
 CPU-only workers are also available if your application does
 not require a GPU.
@@ -324,15 +350,51 @@ that support multi-GPU configurations.
 
 #### Idle Timeout
 
-Idle Timeout is the amount of time in seconds that your idle
-workers will remain running and waiting to accept new requests.
-You are charged for the timeout, so the default should be fine
-for most cases.
+Idle Timeout is the amount of time in seconds (default: 5 seconds)
+that your idle workers will remain running and waiting to accept
+new requests. You are charged for the timeout, so the default
+should be fine for most cases.
+
+#### Execution Timeout
+
+Execution Timeout is the maximum duration for a single job
+(default: 600 seconds / 10 minutes). When exceeded, the job fails
+and the worker stops. You can configure this in the Advanced
+settings or override it per-request. The range is 5 seconds to
+7 days.
+
+#### Job TTL (Time-to-Live)
+
+Job TTL is the total lifespan of a job in the system (default:
+24 hours). When TTL expires, job data is permanently deleted
+regardless of state. The timer starts at submission, not execution,
+so ensure your TTL covers both expected queue time and execution
+time. Range is 10 seconds to 7 days.
+
+#### Idle Endpoint Scale-Down
+
+Runpod automatically scales down endpoints that go a long time
+without receiving requests:
+* After 3 days with no requests, max workers is reduced to 2 and
+  you receive an email notification.
+* After 7 days with no requests, max workers is set to 0.
+
+This is a system-driven scale-down based on request activity.
+Any incoming request resets the timer. To restore the endpoint,
+increase max workers in the console.
 
 #### FlashBoot
 
 FlashBoot is now enabled by default and delivers sub-second cold
 starts at no additional cost.
+
+#### Model Caching
+
+Runpod offers cached models that are pre-loaded on specific machines.
+Selecting a cached model when configuring your endpoint significantly
+reduces model loading time during worker initialization. This is
+especially useful for large models that would otherwise take several
+minutes to download and load into GPU memory.
 
 #### Data Centers (Advanced Setting)
 
@@ -389,6 +451,20 @@ availability.  Check the Runpod console for the current list
 of data centers that support Network Volumes, as this list
 is frequently updated.
 
+#### CUDA Version Selection (Advanced Setting)
+
+You can specify a minimum CUDA version for your workers, which
+ensures they run on machines with compatible NVIDIA drivers.
+Since CUDA is backward compatible, select your required version
+plus all newer versions for maximum hardware availability.
+
+#### Expose HTTP/TCP Ports (Advanced Setting)
+
+This setting exposes the worker's public IP and port for direct
+external communication. This is required for persistent connections
+like WebSockets or when you need direct access to a worker's
+network interface.
+
 ### Worker Types
 
 Runpod Serverless has two worker types:
@@ -424,6 +500,13 @@ Additional SDK features include:
 * **Local API Server** by passing `--rp_serve_api` when running your
   handler locally, which starts a local FastAPI server that mimics
   the production endpoint for more realistic testing.
+* **Worker Fitness Checks** using the
+  `@runpod.serverless.register_fitness_check` decorator to validate
+  your worker environment at startup (eg. GPU availability, disk
+  space) before processing jobs.
+* **VolumeCache** (`runpod.serverless.VolumeCache`) for warming
+  network volume caches across cold starts, so repeated model
+  downloads become a one-time cost per endpoint.
 
 ## Resources
 
