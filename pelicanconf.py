@@ -102,7 +102,7 @@ RELATED_POSTS_MAX = 5
 # Edit freely; an empty list hides the section.
 FEATURED_POSTS = [
     'getting-started-with-runpod-serverless',
-    'upgrading-elastic-stack-from-8x-to-9x-on-ubuntu-2404',
+    'preparing-for-the-microsoft-azure-az-104-exam',
     'upgrading-rds-aurora-mysql-db-engine-version-with-minimal-downtime',
 ]
 
