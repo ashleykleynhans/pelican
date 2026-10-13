@@ -22,6 +22,7 @@ DISABLE_URL_HASH = True
 
 DEFAULT_LANG = 'en'
 THEME = 'themes/flex'
+THEME_TEMPLATES_OVERRIDES = ['overrides']
 CUSTOM_CSS = 'static/custom.css'
 
 FEED_ALL_ATOM = None
@@ -101,9 +102,9 @@ RELATED_POSTS_MAX = 5
 # Curated, ordered list of article slugs for the homepage "Featured" section.
 # Edit freely; an empty list hides the section.
 FEATURED_POSTS = [
-    'getting-started-with-runpod-serverless',
+    'claude-certified-architect-skip-ccar-f-and-go-straight-to-ccar-p',
     'preparing-for-the-microsoft-azure-az-104-exam',
-    'upgrading-rds-aurora-mysql-db-engine-version-with-minimal-downtime',
+    'getting-started-with-runpod-serverless',
 ]
 
 # Sitemap Settings

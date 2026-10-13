@@ -5,3 +5,8 @@ aside {
 pre {
     padding: 10px !important;
 }
+
+.home-intro {
+    margin: 0 0 1.5rem;
+    opacity: 0.8;
+}

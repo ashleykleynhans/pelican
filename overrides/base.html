@@ -1,0 +1,175 @@
+{% if 'jinja2.ext.i18n' not in JINJA_ENVIRONMENT.extensions %}
+  {%- macro _(msg) -%}
+    {{ msg % kwargs }}
+  {%- endmacro -%}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% if page in hidden_pages %}
+  <meta name="robots" content="noindex, nofollow" />
+  {% else %}
+  <meta name="robots" content="{{ ROBOTS }}" />
+  {% endif %}
+
+  {% if USE_GOOGLE_FONTS != False %}
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  {% endif %}
+
+  {% if USE_LESS %}
+    <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/4.2.0/less.min.js" type="text/javascript"></script>
+  {% else %}
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.min.css">
+  {% endif %}
+
+  {# Light mode is handled via .light-theme class and @media query in style.less #}
+
+  {# Pygments syntax highlighting is handled in style.less for both dark and light modes #}
+
+  {% if PLUGINS and ('tipue_search' in PLUGINS or 'pelican.plugins.tipue_search' in PLUGINS) %}
+      {% if USE_GOOGLE_FONTS != False %}
+      <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans" rel="stylesheet">
+      {% endif %}
+    <link rel="stylesheet"
+    href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.css" />
+  {% endif %}
+
+  {% if 'pelican.plugins.search' in PLUGINS %}
+  <link rel="stylesheet"
+        type="text/css"
+        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stork/stork.css" />
+  {% endif %}
+
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/solid.css">
+
+  {% if CUSTOM_CSS %}
+  <link rel="stylesheet" type="text/css" href="{% if main_siteurl is defined %}{{ main_site }}{% else %}{{ SITEURL }}{% endif %}/{{ CUSTOM_CSS }}">
+  {% endif %}
+
+  {% include "partial/icon.html" %}
+
+  {% include "partial/color.html" %}
+
+  {% include "partial/feed.html" %}
+
+  {% include "partial/ga.html" %}
+  {% include "partial/ggst.html" %}
+
+
+  {% include "partial/plausible.html" %}
+
+  {% if PGP_KEY %}
+    <link rel="pgpkey" type="application/pgp-keys" href="{{ SITEURL }}/{{ PGP_KEY }}">
+  {% endif %}
+
+  {% if WEBMENTION_URL %}
+    <link rel="webmention" href="{{ WEBMENTION_URL }}" />
+  {% endif %}
+
+  {% if PINGBACK_URL %}
+    <link rel="pingback" href="{{ PINGBACK_URL }}" />
+  {% endif %}
+
+  {% if not PLUGINS or 'seo' not in PLUGINS %}
+    {% if REL_CANONICAL %}
+      {% if page %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}">
+      {% elif article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+      {% elif page_name == 'index' and not articles_previous_page %}
+        <link rel="canonical" href="{{ SITEURL }}">
+      {% elif author or category or tag or page_name == 'index' %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ articles_page.url }}">
+      {% else %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ output_file }}">
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {% block meta %}
+    <meta name="author" content="{{ AUTHOR }}" />
+    <meta name="description" content="{{ SITEDESCRIPTION }}" />
+    {% include "partial/og.html" %}
+  {% endblock %}
+
+  {% include "partial/twitter_card.html" %}
+
+  <title>{% if article %}{{ article.title|striptags|escape }} | {{ SITENAME }}{% elif page %}{{ page.title|striptags|escape }} | {{ SITENAME }}{% else %}{{ SITENAME }}{% block title %}{% endblock %}{% endif %}</title>
+
+  {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.page_level_ads %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "{{ GOOGLE_ADSENSE.ca_id }}",
+      enable_page_level_ads: true
+    });
+  </script>
+  {% endif %}
+
+  {% include "partial/gtm.html" %}
+  {% include "partial/clarity.html" %}
+</head>
+<body {% if not THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}class="{{ THEME_COLOR|default('dark') }}-theme"{% endif %}>
+  {% include "partial/gtm_noscript.html" %}
+
+  {% include "partial/topnav.html" %}
+
+  <div class="site-content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  {% include "partial/footer.html" %}
+
+  {% if article %}
+  {% include "partial/jsonld_article.html" %}
+  {% else %}
+  {% include "partial/jsonld.html" %}
+  {% endif %}
+  {% include "partial/guages.html" %}
+  {% include "partial/addthis.html" %}
+  {% include "partial/matomo.html" %}
+  {% include 'partial/github.html' %}
+  {% include 'partial/stork.html' %}
+  {% include 'partial/cf_analytics.html' %}
+
+  {% if THEME_COLOR_ENABLE_USER_OVERRIDE %}
+  <script id="dark-theme-script"
+          src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/dark-theme/dark-theme{% if not USE_LESS %}.min{% endif %}.js"
+          data-default-theme="{{ THEME_COLOR|default('dark') }}"
+          data-enable-auto-detect-theme="{{ THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE|default(False)|lower }}">
+  </script>
+  {% endif %}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var svgCopy = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+    var svgCheck = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+    document.querySelectorAll('.highlight, .article-content > pre').forEach(function(block) {
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.innerHTML = svgCopy;
+      btn.addEventListener('click', function() {
+        var code = block.querySelector('code') || block.querySelector('pre') || block;
+        navigator.clipboard.writeText(code.textContent).then(function() {
+          btn.innerHTML = svgCheck;
+          btn.classList.add('copied');
+          setTimeout(function() { btn.innerHTML = svgCopy; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      block.appendChild(btn);
+    });
+  });
+  </script>
+
+  {% block additional_js %}{% endblock %}
+</body>
+</html>

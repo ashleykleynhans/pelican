@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% macro post_card(article) %}
+  <a class="post-item" href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">
+    <div class="post-item-title">{{ article.title }}</div>
+    {% if article.summary %}
+    <div class="post-item-summary">{{ article.summary|striptags|truncate(200) }}</div>
+    {% endif %}
+    <div class="post-meta">
+      <span class="post-category">{{ article.category }}</span>
+      <span>{{ article.locale_date }}</span>
+      {% if PLUGINS and 'post_stats' in PLUGINS %}
+        <span class="post-dot">&middot;</span>
+        <span>{{ article.stats['read_mins'] }} min read</span>
+      {% endif %}
+    </div>
+  </a>
+{% endmacro %}
+
+{% block content %}
+{% if articles_page.number == 1 %}
+<p class="home-intro">{{ SITEDESCRIPTION }}</p>
+{% endif %}
+{% if FEATURED_POSTS and articles is defined and articles_page.number == 1 %}
+<h1 class="page-title">Featured</h1>
+<div class="post-list">
+{% for slug in FEATURED_POSTS %}
+  {% for article in articles if article.slug == slug %}
+    {{ post_card(article) }}
+  {% endfor %}
+{% endfor %}
+</div>
+{% endif %}
+
+<h1 class="page-title">Latest Posts</h1>
+
+<div class="post-list">
+{% for article in articles_page.object_list %}
+  {{ post_card(article) }}
+{% endfor %}
+</div>
+
+{% include "partial/pagination.html" %}
+{% endblock %}
