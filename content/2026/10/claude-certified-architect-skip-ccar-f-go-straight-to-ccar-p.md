@@ -1,7 +1,7 @@
 Title: Claude Certified Architect: Skip CCAR-F and Go Straight to CCAR-P
 Date: 2026-10-05
 Author: Ashley Kleynhans
-Modified: 2026-10-05
+Modified: 2026-11-20
 Category: AI
 Tags: ai, anthropic, claude, ccar, certification
 Summary: My experience preparing for the Claude Certified Architect Professional (CCAR-P) exam, why I recommend senior engineers skip the CCAR-F foundations exam entirely, and the courses and practice tests that got me there.
@@ -30,6 +30,16 @@ easier than CCAR-F, and I scored higher on it. If you already have solid
 engineering experience, the foundations exam is unlikely to teach you
 much that the professional exam does not already cover at a more
 relevant level.
+
+**Update (20 November 2026):** Anthropic has announced that the Claude
+Certified Associate - Foundations, Claude Certified Developer -
+Foundations and Claude Certified Architect - Professional exams are
+changing from 7 December 2026. There is also a new Claude Certified
+Developer - Professional exam. Everything in this post reflects the
+exams as they stand today, so my advice to skip CCAR-F may no longer
+apply after 6 December 2026. Check the
+[Anthropic partner certifications page](https://anthropic-partners.skilljar.com/page/partner-certifications){:target="_blank"}
+for the current exam lineup before deciding which one to sit.
 
 ## How I Prepared
 
@@ -72,9 +82,9 @@ score.
 
 If you are a senior engineer considering this certification path:
 
-1. Skip CCAR-F and go straight to CCAR-P. The overlap is substantial and
-   the additional professional-level content plays to the strengths you
-   already have.
+1. Skip CCAR-F and go straight to CCAR-P (valid until 6 December 2026,
+   when the exams change). The overlap is substantial and the additional
+   professional-level content plays to the strengths you already have.
 2. Start with the official Anthropic material on Skilljar before moving
    on to third-party courses.
 3. Use more than one set of practice tests to get broader coverage of
